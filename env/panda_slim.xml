@@ -1,14 +1,11 @@
 <mujoco model="panda nohand">
-  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+  <compiler angle="radian" autolimits="true"/>
 
   <default>
     <default class="panda">
       <material specular="0.5" shininess="0.25"/>
       <joint armature="0.1" damping="1" axis="0 0 1" range="-2.8973 2.8973" type="hinge"/>
       <general dyntype="none" biastype="affine" ctrlrange="-2.8973 2.8973" forcerange="-87 87"/>
-      <default class="finger">
-        <joint axis="0 1 0" type="slide" range="0 0.04"/>
-      </default>
 
       <default class="panda/visual">
         <geom type="mesh" contype="0" conaffinity="0" group="2" margin="1.0" gap="1.0"/>
@@ -34,22 +31,22 @@
     <material class="panda" name="light_blue" rgba="0.039216 0.541176 0.780392 1"/>
 
     <!-- Collision meshes -->
-    <mesh name="link0_c" file="link0.stl"/>
-    <mesh name="link1_c" file="link1.stl"/>
-    <mesh name="link2_c" file="link2.stl"/>
-    <mesh name="link3_c" file="link3.stl"/>
-    <mesh name="link4_c" file="link4.stl"/>
-    <mesh name="link5_c0" file="link5_collision_0.obj"/>
-    <mesh name="link5_c1" file="link5_collision_1.obj"/>
-    <mesh name="link5_c2" file="link5_collision_2.obj"/>
-    <mesh name="link6_c" file="link6.stl"/>
-    <mesh name="link7_c" file="link7.stl"/>
+    <mesh name="link0_c" file="assets/link0.stl"/>
+    <mesh name="link1_c" file="assets/link1.stl"/>
+    <mesh name="link2_c" file="assets/link2.stl"/>
+    <mesh name="link3_c" file="assets/link3.stl"/>
+    <mesh name="link4_c" file="assets/link4.stl"/>
+    <mesh name="link5_c0" file="assets/link5_collision_0.obj"/>
+    <mesh name="link5_c1" file="assets/link5_collision_1.obj"/>
+    <mesh name="link5_c2" file="assets/link5_collision_2.obj"/>
+    <mesh name="link6_c" file="assets/link6.stl"/>
+    <mesh name="link7_c" file="assets/link7.stl"/>
     
   </asset>
 
   <worldbody>
       <light cutoff="100" diffuse="1 1 1" dir="-0 0 -1.3" directional="true" exponent="1" pos="0 0 1.3" specular=".1 .1 .1"/>
-      <geom conaffinity="1" condim="3" friction="1 .1 .1" material="MatPlane" name="floor" pos="0 0 0" size="20 20 0.125" type="plane"/>
+      <!-- <geom conaffinity="1" condim="3" friction="1 .1 .1" material="MatPlane" name="floor" pos="0 0 0" size="20 20 0.125" type="plane"/> -->
       <body name="link1" pos="0 0 0.333" childclass="panda">
         <inertial mass="4.970684" pos="0.003875 0.002081 -0.04762"
           fullinertia="0.70337 0.70661 0.0091170 -0.00013900 0.0067720 0.019169"/>
